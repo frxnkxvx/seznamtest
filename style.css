@@ -1,0 +1,125 @@
+/* Resetujeme základní styly pro všechny prohlížeče */
+* {
+    margin: 0; /* Odstraní výchozí okraje kolem prvků */
+    padding: 0; /* Odstraní výchozí vnitřní odsazení */
+    box-sizing: border-box; /* Zahrnuje okraje a vnitřní odsazení do šířky a výšky prvku */
+}
+
+/* Nastavíme pozadí stránky */
+body {
+    font-family: 'Lucida Console', 'monospace'; /* font */
+    background-color: #e8e8e8; /* Barva pozadí */
+    color: #000000; /* Barva textu */
+    padding: 20px; /* Vytvoříme odsazení od okrajů */
+    display: flex; /* Používáme flexbox pro zarovnání obsahu */
+    flex-direction: column; /* Vertikální uspořádání položek */
+    justify-content: center; /* Vycentrování obsahu vertikálně */
+    align-items: center; /* Vycentrování obsahu horizontálně */
+    height: 100vh; /* Stránka zabere celou výšku prohlížeče */
+}
+
+/* Styl pro hlavní kontejner seznamu */
+#shoppingList {
+    width: 100%; /* Seznam bude mít šířku 100% rodičovského prvku */
+    max-width: 500px; /* Maximální šířka seznamu bude 500px */
+    background-color: white; /* Bílý podklad pro seznam */
+    border-radius: 8px; /* Zaoblení rohů */
+    box-shadow: 0 4px 10px rgba(74, 70, 70, 0.1); /* Stín */
+    padding: 20px; /* Vnitřní odsazení */
+}
+
+/* Styl pro každou položku seznamu (li) */
+li {
+    display: flex; /* Flexbox pro horizontální zarovnání textu a tlačítka */
+    justify-content: space-between; /* Mezi textem a tlačítkem bude mezera */
+    align-items: center; /* Zarovnáme položku na střed vertikálně */
+    padding: 10px 0; /* Vytvoříme vertikální odsazení mezi položkami */
+    border-bottom: 1px solid #d1b6b6; /* Jemná čára mezi položkami */
+}
+
+/* Tlačítko pro odstranění položky */
+button {
+    background-color: #5e1253; /* Červená barva pro odstranění (výrazná) */
+    color: white; /* Bílé písmo pro kontrast */
+    border: none; /* Odstraníme okraj */
+    border-radius: 4px; /* Zaoblení rohů tlačítka */
+    padding: 5px 10px; /* Vnitřní odsazení tlačítka */
+    cursor: pointer; /* Změní kurzor na ruku při najetí myší */
+    transition: background-color 0.3s ease; /* Plynulá změna barvy při hover */
+}
+
+/* Styl pro tlačítko při najetí myší (hover) */
+button:hover {
+    background-color: #5e1253; /* Tmavší červená při najetí myší */
+}
+
+/* Styl pro input (vstupní pole pro zadávání položek) */
+input[type="text"] {
+    width: 100%; /* Vstupní pole zabere celou šířku rodičovského elementu */
+    padding: 10px; /* Vnitřní odsazení pro lepší vzhled */
+    border: 1px solid #ccc; /* Světle šedý okraj pro vstupní pole */
+    border-radius: 4px; /* Zaoblení rohů */
+    margin-bottom: 20px; /* Mezera pod vstupním polem */
+    font-size: 16px; /* Zvýšíme velikost písma pro lepší čitelnost */
+}
+
+/* Styl pro tlačítko pro přidání položky */
+#addItemButton {
+    background-color: #4CAF50; /* Zelená barva pro přidání položky (pozitivní) */
+    color: white; /* Bílé písmo pro kontrast */
+    border: none; /* Odstraníme okraj */
+    border-radius: 4px; /* Zaoblení rohů */
+    padding: 10px 15px; /* Vnitřní odsazení */
+    cursor: pointer; /* Změní kurzor na ruku při najetí myší */
+    font-size: 16px; /* Zvýšíme velikost písma pro lepší čitelnost */
+    transition: background-color 0.3s ease; /* Plynulá změna barvy při hover */
+}
+
+/* Styl pro tlačítko pro přidání položky při najetí myší */
+#addItemButton:hover {
+    background-color: #45a049; /* Tmavší zelená při najetí myší */
+}
+
+/* Styl pro zprávu o stavu */
+#statusMessage {
+    width: 100%;              /* Zpráva bude široká přes celou šířku */
+    padding: 10px;            /* Padding pro lepší vzhled */
+    text-align: center;       /* Text bude vycentrován */
+    font-size: 18px;          /* Velikost písma */
+    margin-bottom: 20px;      /* Mezera pod zprávou */
+    border-radius: 5px;       /* Zaoblení rohů */
+    position: fixed;          /* Umístění zprávy je fixní */
+    top: 10px;                /* 10px od horního okraje */
+    left: 50%;                /* Centrování zprávy */
+    transform: translateX(-50%); /* Centrum horizontálně */
+    z-index: 1000;            /* Zajistí, že bude nad ostatními prvky */
+    display: none;            /* Zpráva je skrytá dokud ji nezobrazíme */
+}
+
+/* Styl pro chyby ve zprávě */
+#statusMessage.error {
+    background-color: #f8d7da;  /* Červená barva pro chyby */
+    color: #721c24;              /* Barva textu pro chybu */
+}
+
+/* Styl pro úspěch ve zprávě */
+#statusMessage.success {
+    background-color: #d4edda;  /* Zelená barva pro úspěch */
+    color: #155724;              /* Barva textu pro úspěch */
+}
+
+#itemCategory, #itemQuantity {
+    width: 100%;              /* Obě pole budou stejně široká */
+    max-width: 250px;         /* Maximální šířka pole */
+    font-family: 'Lucida Console', 'monospace'; /* Písmo */
+    color: #000000;           /* Barva textu */
+    padding: 10px;            /* Vnitřní odsazení */
+    background-color: #ffffff; /* Bílé pozadí */
+    border: 1px solid #ccc;   /* Světle šedý okraj */
+    border-radius: 4px;       /* Zaoblení rohů */
+    margin-bottom: 20px;      /* Mezera pod polem */
+    font-size: 16px;          /* Zvýšená velikost písma */
+    box-sizing: border-box;   /* Zahrnout padding do velikosti pole */
+    text-align: left;         /* Zarovnání textu vlevo */
+}
+

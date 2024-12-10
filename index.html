@@ -1,0 +1,31 @@
+<!DOCTYPE html> <!-- Určuje, že dokument je napsán v HTML5. -->
+<html lang="cs"> <!-- Otevírá HTML dokument a specifikuje jazyk stránky jako čeština. -->
+<head>
+    <meta charset="UTF-8">  <!-- Definuje kódování znaků stránky (UTF-8). -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Umožňuje správné zobrazení na mobilních zařízeních. -->
+    <title>SEZNAM NÁKUPU</title> <!-- Nastavuje název stránky, který se zobrazí na záložce prohlížeče. -->
+    <link rel="stylesheet" href="style.css"> <!-- Odkazuje na externí CSS soubor pro stylování stránky. -->
+    </head>
+<body> <!-- Začátek těla HTML dokumentu, kde je obsah stránky. -->
+    <div id="statusMessage"></div> <!-- Místo pro zobrazení zpráv o stavu -->
+    <h1>SEZNAM NÁKUPU</h1>  <!-- Hlavní nadpis stránky. -->
+    <input id="itemName" type="text" placeholder="Položka"> <!-- Textové pole pro zadání názvu položky do seznamu. -->
+    <input id="itemQuantity" type="number" placeholder="Množství"> <!-- Pole pro zadání množství položky. -->
+    <select id="itemCategory">
+        <option value="" disabled selected>Kategorie</option>
+        <option value="Ovoce">Ovoce</option>
+        <option value="Zelenina">Zelenina</option>
+        <option value="Mléčné výrobky">Mléčné výrobky</option>
+        <option value="Slané">Slané</option>
+        <option value="Sladké">Sladké</option>
+        <option value="Těstoviny">Těstoviny</option>
+        <option value="Pečivo">Pečivo</option>
+        <option value="Ostatní potraviny">Ostatní potraviny</option>
+        <option value="Drogerie">Drogerie</option>
+    </select>
+    <button onclick="addItem()">Přidat</button> <!-- Tlačítko, které přidá položku do seznamu při kliknutí. -->
+    <ul id="shoppingList"></ul>  <!-- Seznam, kde se budou zobrazovat položky. -->
+    <button onclick="exportToTXT()">STÁHNOUT SEZNAM</button> <!-- Tlačítko pro stažení seznamu jako textového souboru. -->
+    <script src="script.js"></script> <!-- Odkazuje na externí JavaScriptový soubor, který obsahuje logiku pro interakci na stránce. -->
+    
+</body>
